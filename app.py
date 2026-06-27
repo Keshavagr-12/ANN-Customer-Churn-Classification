@@ -5,15 +5,10 @@ import pickle
 import streamlit as st
 # import tensorflow as tf
 
-# from tensorflow.keras.models import load_model
-# model = tf.keras.models.load_model('model.h5')
+from tensorflow.keras.models import load_model
+model = tf.keras.models.load_model('model.h5')
 
-import pickle
 
-model = pickle.load(open("model.pkl", "rb"))
-scaler = pickle.load(open("scaler.pkl", "rb"))
-label_encoder = pickle.load(open("label_encoder.pkl", "rb"))
-one_hot_encoder = pickle.load(open("one_hot_encoder.pkl", "rb"))
 
 with open('label_encoder.pkl','rb') as file:
     label_encoder = pickle.load(file)
