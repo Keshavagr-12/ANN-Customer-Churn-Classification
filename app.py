@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler,LabelEncoder,OneHotEncoder
 import pickle
 import streamlit as st
-# import tensorflow as tf
+import tensorflow as tf
 
 from tensorflow.keras.models import load_model
 model = tf.keras.models.load_model('model.h5')
