@@ -2,11 +2,18 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler,LabelEncoder,OneHotEncoder
 import pickle
-from tensorflow.keras.models import load_model
 import streamlit as st
 import tensorflow as tf
 
-model = tf.keras.models.load_model('model.h5')
+# from tensorflow.keras.models import load_model
+# model = tf.keras.models.load_model('model.h5')
+
+import pickle
+
+model = pickle.load(open("model.pkl", "rb"))
+scaler = pickle.load(open("scaler.pkl", "rb"))
+label_encoder = pickle.load(open("label_encoder.pkl", "rb"))
+one_hot_encoder = pickle.load(open("one_hot_encoder.pkl", "rb"))
 
 with open('label_encoder.pkl','rb') as file:
     label_encoder = pickle.load(file)
